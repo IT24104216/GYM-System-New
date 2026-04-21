@@ -1,0 +1,40 @@
+import { Router } from 'express';
+import { healthRouter } from './modules/health/health.routes.js';
+import { authRouter } from './modules/auth/auth.routes.js';
+import { usersRouter } from './modules/users/users.routes.js';
+import { adminRouter } from './modules/admin/admin.routes.js';
+import { coachRouter } from './modules/coach/coach.routes.js';
+import { dietitianRouter } from './modules/dietitian/dietitian.routes.js';
+import { appointmentsRouter } from './modules/appointments/appointments.routes.js';
+import { notificationsRouter } from './modules/notifications/notifications.routes.js';
+import { workoutsRouter } from './modules/workouts/workouts.routes.js';
+import { mealPlansRouter } from './modules/mealPlans/mealPlans.routes.js';
+import { progressRouter } from './modules/progress/progress.routes.js';
+import { promotionsRouter } from './modules/promotions/promotions.routes.js';
+import { nutritionRouter } from './modules/nutrition/nutrition.routes.js';
+import { feedbacksRouter } from './modules/feedbacks/feedbacks.routes.js';
+import { lockersRouter } from './modules/lockers/lockers.routes.js';
+import { faqsRouter } from './modules/faqs/faqs.routes.js';
+import { subscriptionsRouter } from './modules/subscriptions/subscriptions.routes.js';
+
+const router = Router();
+
+router.use('/health', healthRouter);
+router.use('/auth', authRouter);
+router.use('/users', usersRouter);
+router.use('/admin', adminRouter);
+router.use('/coach', coachRouter);
+router.use('/dietitian', dietitianRouter);
+router.use('/appointments', appointmentsRouter);
+router.use('/notifications', notificationsRouter);
+router.use('/workouts', workoutsRouter);
+router.use('/meal-plans', mealPlansRouter);
+router.use('/progress', progressRouter);
+router.use('/promotions', promotionsRouter);
+router.use('/nutrition', nutritionRouter);
+router.use('/feedbacks', feedbacksRouter);
+router.use('/lockers', lockersRouter);
+router.use('/faqs', faqsRouter);
+router.use('/subscriptions', subscriptionsRouter);
+
+export { router as apiRouter };

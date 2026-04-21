@@ -1,0 +1,46 @@
+export const ROLES = {
+  USER: 'user',
+  ADMIN: 'admin',
+  COACH: 'coach',
+  DIETITIAN: 'dietitian',
+};
+
+export const ROUTES = {
+  LOGIN: '/login',
+  REGISTER: '/register',
+  UNAUTHORIZED: '/unauthorized',
+  USER_DASHBOARD: '/user/dashboard',
+  USER_COACHES: '/user/coaches',
+  USER_DIETITIANS: '/user/dietitians',
+  USER_COACH_FEEDBACKS: '/user/coach-feedbacks',
+  USER_DIETITIAN_FEEDBACKS: '/user/dietitian-feedbacks',
+  USER_WORKOUTS: '/user/workouts',
+  USER_MEAL_PLAN: '/user/meal-plan',
+  USER_PROGRESS: '/user/progress',
+  USER_ADS_PROMOTIONS: '/user/ads-promotions',
+  USER_LOCKERS: '/user/lockers',
+  USER_FAQS: '/user/faqs',
+  USER_PROFILE: '/user/profile',
+  USER_SUBSCRIPTION: '/user/subscription',
+  ADMIN_DASHBOARD: '/admin/dashboard',
+  ADMIN_USERS: '/admin/users',
+  ADMIN_REPORTS: '/admin/reports',
+  ADMIN_PROMOTIONS: '/admin/promotions',
+  ADMIN_LOCKERS: '/admin/lockers',
+  ADMIN_FAQS: '/admin/faqs',
+  ADMIN_SETTINGS: '/admin/settings',
+  DIETITIAN_DASHBOARD: '/dietitian/dashboard',
+  DIETITIAN_CLIENTS: '/dietitian/clients',
+  DIETITIAN_MEAL_PLANS: '/dietitian/meal-plans',
+  COACH_DASHBOARD: '/coach/dashboard',
+  COACH_CLIENTS: '/coach/clients',
+  COACH_WORKOUT_PLANS: '/coach/workout-plans',
+  COACH_SCHEDULING: '/coach/scheduling',
+};
+
+export const ROLE_HOME = {
+  [ROLES.USER]: ROUTES.USER_DASHBOARD,
+  [ROLES.ADMIN]: ROUTES.ADMIN_DASHBOARD,
+  [ROLES.COACH]: ROUTES.COACH_DASHBOARD,
+  [ROLES.DIETITIAN]: ROUTES.DIETITIAN_DASHBOARD,
+};

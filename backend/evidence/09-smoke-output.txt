@@ -1,0 +1,7 @@
+
+> gympro-backend@1.0.0 test
+> node test/security-routes.smoke.js && node test/ownership-guards.smoke.js && node test/dietitian-slot.validation.smoke.js
+
+Security smoke tests passed.
+Ownership guard smoke tests passed.
+Dietitian slot validation smoke tests passed.

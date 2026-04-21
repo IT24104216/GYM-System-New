@@ -1,0 +1,60 @@
+
+> gympro-client@0.0.0 test:ui
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client[39m
+
+ [32m✓[39m frontend/src/features/auth/model/AuthContext.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1053[2mms[22m[39m
+     [33m[2m✓[22m[39m supports login, update, register and logout flows [33m 912[2mms[22m[39m
+ [32m✓[39m frontend/src/app/router/ProtectedRoute.test.jsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1417[2mms[22m[39m
+     [33m[2m✓[22m[39m shows loading spinner while auth is loading [33m 1197[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/pages/UserWorkouts.test.jsx [2m([22m[2m1 test[22m[2m)[22m[33m 1242[2mms[22m[39m
+     [33m[2m✓[22m[39m renders workouts sections [33m 1216[2mms[22m[39m
+[90mstderr[2m | frontend/src/features/coach/pages/CoachDashboard.test.jsx[2m > [22m[2mCoachDashboard[2m > [22m[2mrenders dashboard sections and empty-state messages
+[22m[39mReact does not recognize the `whileHover` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `whilehover` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+The tag <stop> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+The tag <linearGradient> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+The tag <defs> is unrecognized in this browser. If you meant to render a React component, start its name with an uppercase letter.
+
+[90mstderr[2m | frontend/src/features/coach/pages/CoachDashboard.test.jsx[2m > [22m[2mCoachDashboard[2m > [22m[2mrenders dashboard sections and empty-state messages
+[22m[39m<linearGradient /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+
+ [32m✓[39m frontend/src/features/coach/pages/CoachDashboard.test.jsx [2m([22m[2m1 test[22m[2m)[22m[33m 1555[2mms[22m[39m
+     [33m[2m✓[22m[39m renders dashboard sections and empty-state messages [33m 1547[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/UserPromotionsPopup.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 2679[2mms[22m[39m
+     [33m[2m✓[22m[39m loads promotions and navigates on CTA click [33m 2658[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/MealPlanRiskMonitorCard.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[33m 3466[2mms[22m[39m
+     [33m[2m✓[22m[39m renders neutral state text [33m 1120[2mms[22m[39m
+     [33m[2m✓[22m[39m shows warning actions and triggers handlers for risk streak [33m 2214[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/hooks/useDietitianDashboardData.test.js [2m([22m[2m2 tests[22m[2m)[22m[33m 387[2mms[22m[39m
+ [32m✓[39m frontend/src/features/admin/pages/AdminSettings.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 4012[2mms[22m[39m
+     [33m[2m✓[22m[39m loads and displays admin settings data [33m 2305[2mms[22m[39m
+     [33m[2m✓[22m[39m saves updated settings [33m 1696[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/RegisterPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 4768[2mms[22m[39m
+     [33m[2m✓[22m[39m renders registration form [33m 3379[2mms[22m[39m
+     [33m[2m✓[22m[39m validates password mismatch before API call [33m 1380[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/LoginPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 6169[2mms[22m[39m
+     [33m[2m✓[22m[39m renders login form fields [33m 4401[2mms[22m[39m
+     [33m[2m✓[22m[39m shows API error when login fails [33m 1758[2mms[22m[39m
+ [32m✓[39m frontend/src/features/coach/pages/CoachScheduling.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 7042[2mms[22m[39m
+     [33m[2m✓[22m[39m renders scheduling page and empty slot state [33m 3978[2mms[22m[39m
+     [33m[2m✓[22m[39m shows validation error when required fields are missing [33m 3055[2mms[22m[39m
+ [32m✓[39m frontend/src/features/coach/pages/CoachClients.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 7322[2mms[22m[39m
+     [33m[2m✓[22m[39m renders clients page and empty pending table state [33m 1329[2mms[22m[39m
+     [33m[2m✓[22m[39m requires reject reason before submitting rejection [33m 5962[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/utils/dietitianDashboard.utils.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 74[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/utils/mealRiskScoring.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 21[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/utils/storage.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/hooks/useUserMealPlanData.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 238[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/utils/mealPlanStorage.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/config/navConfig.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/utils/userMealPlan.utils.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 8[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/CalorieTooltip.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[32m 238[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m20 passed[39m[22m[90m (20)[39m
+[2m      Tests [22m [1m[32m54 passed[39m[22m[90m (54)[39m
+[2m   Start at [22m 09:21:40
+[2m   Duration [22m 31.30s[2m (transform 12.48s, setup 11.84s, import 94.84s, tests 41.75s, environment 131.94s)[22m
+

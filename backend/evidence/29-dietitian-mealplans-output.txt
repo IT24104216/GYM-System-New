@@ -1,0 +1,16 @@
+
+> gympro-client@0.0.0 test:ui
+> vitest run frontend/src/features/dietitian/pages/DietitianMealPlans.test.jsx
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client[39m
+
+ [32m✓[39m frontend/src/features/dietitian/pages/DietitianMealPlans.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1738[2mms[22m[39m
+     [33m[2m✓[22m[39m loads and renders meal list for dietitian [33m 879[2mms[22m[39m
+     [33m[2m✓[22m[39m shows validation warning when required add form fields are missing [33m 852[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m   Start at [22m 13:51:41
+[2m   Duration [22m 7.44s[2m (transform 254ms, setup 263ms, import 2.65s, tests 1.74s, environment 2.34s)[22m
+

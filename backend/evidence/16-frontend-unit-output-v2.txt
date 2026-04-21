@@ -1,0 +1,37 @@
+
+> gympro-client@0.0.0 test:ui
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client[39m
+
+ [32m✓[39m frontend/src/features/user/utils/mealRiskScoring.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/utils/mealPlanStorage.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/utils/dietitianDashboard.utils.test.js [2m([22m[2m5 tests[22m[2m)[22m[33m 342[2mms[22m[39m
+     [33m[2m✓[22m[39m formats weekday and time display values [33m 320[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/hooks/useDietitianDashboardData.test.js [2m([22m[2m2 tests[22m[2m)[22m[33m 374[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/hooks/useUserMealPlanData.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 294[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/model/AuthContext.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1485[2mms[22m[39m
+     [33m[2m✓[22m[39m supports login, update, register and logout flows [33m 1275[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/utils/storage.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/pages/UserWorkouts.test.jsx [2m([22m[2m1 test[22m[2m)[22m[33m 501[2mms[22m[39m
+     [33m[2m✓[22m[39m renders workouts sections [33m 490[2mms[22m[39m
+ [32m✓[39m frontend/src/app/router/ProtectedRoute.test.jsx [2m([22m[2m4 tests[22m[2m)[22m[33m 690[2mms[22m[39m
+     [33m[2m✓[22m[39m shows loading spinner while auth is loading [33m 607[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/config/navConfig.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/utils/userMealPlan.utils.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m frontend/src/features/admin/pages/AdminSettings.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 2907[2mms[22m[39m
+     [33m[2m✓[22m[39m loads and displays admin settings data [33m 938[2mms[22m[39m
+     [33m[2m✓[22m[39m saves updated settings [33m 1959[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/LoginPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 4179[2mms[22m[39m
+     [33m[2m✓[22m[39m renders login form fields [33m 1872[2mms[22m[39m
+     [33m[2m✓[22m[39m shows API error when login fails [33m 2298[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/RegisterPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 4979[2mms[22m[39m
+     [33m[2m✓[22m[39m renders registration form [33m 1636[2mms[22m[39m
+     [33m[2m✓[22m[39m validates password mismatch before API call [33m 3334[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m      Tests [22m [1m[32m41 passed[39m[22m[90m (41)[39m
+[2m   Start at [22m 02:49:45
+[2m   Duration [22m 21.79s[2m (transform 7.23s, setup 8.02s, import 46.87s, tests 15.83s, environment 96.93s)[22m
+

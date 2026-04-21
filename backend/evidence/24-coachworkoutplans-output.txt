@@ -1,0 +1,15 @@
+
+> gympro-client@0.0.0 test:ui
+> vitest run frontend/src/features/coach/pages/CoachWorkoutPlans.test.jsx
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client[39m
+
+ [32m✓[39m frontend/src/features/coach/pages/CoachWorkoutPlans.test.jsx [2m([22m[2m1 test[22m[2m)[22m[33m 549[2mms[22m[39m
+     [33m[2m✓[22m[39m renders workout plans page and request card data [33m 544[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m   Start at [22m 13:34:23
+[2m   Duration [22m 6.14s[2m (transform 345ms, setup 308ms, import 2.57s, tests 549ms, environment 2.31s)[22m
+

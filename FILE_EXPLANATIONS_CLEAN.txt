@@ -1,0 +1,399 @@
+﻿GYMPRO FILE EXPLANATIONS (CLEAN)
+===============================
+
+This file is grouped by Frontend and Backend, then folder-by-folder.
+
+FRONTEND
+--------
+
+[frontend\src]
+- App.css: App-level styles.
+- App.jsx: Root React app component.
+- index.css: Global frontend styles.
+- main.jsx: Frontend bootstrap entry file.
+
+[frontend\src\app]
+- App.jsx: Project file used by app/tooling/tests.
+- main.jsx: Project file used by app/tooling/tests.
+
+[frontend\src\app\providers]
+- ThemeContext.jsx: Theme provider/context for the UI.
+
+[frontend\src\app\router]
+- AppRouter.jsx: Defines main application routes.
+- ProtectedRoute.jsx: Protects routes by auth/role checks.
+- ProtectedRoute.test.jsx: Automated test file.
+
+[frontend\src\assets]
+- react.svg: Project file used by app/tooling/tests.
+
+[frontend\src\features\admin\api]
+- admin.api.js: API call wrapper functions.
+- admin.api.test.js: Automated test file.
+
+[frontend\src\features\admin\pages]
+- AdminDashboard.jsx: Feature page component.
+- AdminFaqs.jsx: Feature page component.
+- AdminFaqs.test.jsx: Automated test file.
+- AdminLockers.jsx: Feature page component.
+- AdminLockers.test.jsx: Automated test file.
+- AdminPromotions.jsx: Feature page component.
+- AdminPromotions.test.jsx: Automated test file.
+- AdminReports.jsx: Feature page component.
+- AdminSettings.jsx: Feature page component.
+- AdminSettings.test.jsx: Automated test file.
+- AdminUsers.jsx: Feature page component.
+- AdminUsers.test.jsx: Automated test file.
+
+[frontend\src\features\auth\api]
+- auth.api.js: API call wrapper functions.
+
+[frontend\src\features\auth\model]
+- AuthContext.jsx: Project file used by app/tooling/tests.
+- AuthContext.test.jsx: Automated test file.
+
+[frontend\src\features\auth\pages]
+- LoginPage.jsx: Feature page component.
+- LoginPage.test.jsx: Automated test file.
+- RegisterPage.jsx: Feature page component.
+- RegisterPage.test.jsx: Automated test file.
+
+[frontend\src\features\coach\api]
+- coach.api.js: API call wrapper functions.
+- coach.api.test.js: Automated test file.
+
+[frontend\src\features\coach\pages]
+- CoachClients.jsx: Feature page component.
+- CoachClients.test.jsx: Automated test file.
+- CoachDashboard.jsx: Feature page component.
+- CoachDashboard.test.jsx: Automated test file.
+- CoachFaqs.jsx: Feature page component.
+- CoachScheduling.jsx: Feature page component.
+- CoachScheduling.test.jsx: Automated test file.
+- CoachWorkoutPlans.jsx: Feature page component.
+- CoachWorkoutPlans.test.jsx: Automated test file.
+
+[frontend\src\features\dietitian\api]
+- dietitian.api.js: API call wrapper functions.
+
+[frontend\src\features\dietitian\components]
+- DietitianAppointmentsTable.jsx: Reusable UI component.
+- DietitianAppointmentsTable.test.jsx: Automated test file.
+- DietitianDashboardHeaderControls.jsx: Reusable UI component.
+- DietitianMembersPanel.jsx: Reusable UI component.
+- DietitianStatsGrid.jsx: Reusable UI component.
+- DietitianTimeSlotsPanel.jsx: Reusable UI component.
+- DietitianTimeSlotsPanel.test.jsx: Automated test file.
+
+[frontend\src\features\dietitian\hooks]
+- useDietitianDashboardData.js: Reusable React hook.
+- useDietitianDashboardData.test.js: Automated test file.
+
+[frontend\src\features\dietitian\pages]
+- DietitianClients.jsx: Feature page component.
+- DietitianClients.test.jsx: Automated test file.
+- DietitianDashboard.jsx: Feature page component.
+- DietitianFaqs.jsx: Feature page component.
+- DietitianMealPlans.jsx: Feature page component.
+- DietitianMealPlans.test.jsx: Automated test file.
+
+[frontend\src\features\dietitian\utils]
+- dietitianDashboard.utils.js: Utility/helper functions.
+- dietitianDashboard.utils.test.js: Automated test file.
+- mealPlanStorage.js: Project file used by app/tooling/tests.
+- mealPlanStorage.test.js: Automated test file.
+
+[frontend\src\features\user\api]
+- user.api.js: API call wrapper functions.
+
+[frontend\src\features\user\components]
+- CalorieTooltip.jsx: Reusable UI component.
+- CalorieTooltip.test.jsx: Automated test file.
+- MealPlanRiskMonitorCard.jsx: Reusable UI component.
+- MealPlanRiskMonitorCard.test.jsx: Automated test file.
+- UserPromotionsPopup.jsx: Reusable UI component.
+- UserPromotionsPopup.test.jsx: Automated test file.
+
+[frontend\src\features\user\data]
+- promotions.mock.js: Project file used by app/tooling/tests.
+
+[frontend\src\features\user\hooks]
+- useUserMealPlanData.js: Reusable React hook.
+- useUserMealPlanData.test.js: Automated test file.
+
+[frontend\src\features\user\pages]
+- UserAdsPromotions.jsx: Feature page component.
+- UserCoaches.jsx: Feature page component.
+- UserCoaches.test.jsx: Automated test file.
+- UserCoachFeedbacks.jsx: Feature page component.
+- UserCoachFeedbacks.test.jsx: Automated test file.
+- UserDashboard.jsx: Feature page component.
+- UserDietitianFeedbacks.jsx: Feature page component.
+- UserDietitians.jsx: Feature page component.
+- UserDietitians.test.jsx: Automated test file.
+- UserFaqs.jsx: Feature page component.
+- UserLockers.jsx: Feature page component.
+- UserMealPlan.jsx: Feature page component.
+- UserMealPlan.test.jsx: Automated test file.
+- UserProfile.jsx: Feature page component.
+- UserProfile.test.jsx: Automated test file.
+- UserProgress.jsx: Feature page component.
+- UserWorkouts.jsx: Feature page component.
+- UserWorkouts.test.jsx: Automated test file.
+
+[frontend\src\features\user\utils]
+- mealRiskScoring.js: Project file used by app/tooling/tests.
+- mealRiskScoring.test.js: Automated test file.
+- userMealPlan.utils.js: Utility/helper functions.
+- userMealPlan.utils.test.js: Automated test file.
+
+[frontend\src\pages\errors]
+- NotFoundPage.jsx: Feature page component.
+- UnauthorizedPage.jsx: Feature page component.
+
+[frontend\src\shared\api]
+- axiosClient.js: Shared Axios client configuration.
+- faqs.api.js: API call wrapper functions.
+- notifications.api.js: API call wrapper functions.
+
+[frontend\src\shared\components\faq]
+- FaqManagerPage.jsx: Reusable UI component.
+
+[frontend\src\shared\components\layout]
+- AppShell.jsx: Main dashboard layout shell.
+- NotificationsDrawer.jsx: Reusable UI component.
+- Sidebar.jsx: Reusable UI component.
+- Topbar.jsx: Reusable UI component.
+
+[frontend\src\shared\components\ui]
+- DataTable.jsx: Reusable UI component.
+- LoadingSpinner.jsx: Reusable UI component.
+- PageHeader.jsx: Reusable UI component.
+- StatCard.jsx: Reusable UI component.
+
+[frontend\src\shared\config]
+- navConfig.js: Project file used by app/tooling/tests.
+- navConfig.test.js: Automated test file.
+
+[frontend\src\shared\hooks]
+- useAppTheme.js: Reusable React hook.
+- useAuth.js: Reusable React hook.
+
+[frontend\src\shared\theme]
+- muiTheme.js: Project file used by app/tooling/tests.
+
+[frontend\src\shared\utils]
+- branches.js: Project file used by app/tooling/tests.
+- constants.js: Project file used by app/tooling/tests.
+- helpers.js: Project file used by app/tooling/tests.
+- storage.js: Project file used by app/tooling/tests.
+- storage.test.js: Automated test file.
+
+[frontend\src\test]
+- setupTests.js: Frontend test setup.
+BACKEND
+-------
+
+[backend]
+- package.json: Backend dependencies and scripts.
+- package-lock.json: Locked backend dependency versions.
+- .env: Backend environment variables file.
+- .env.test: Backend environment variables file.
+- .env.test.example: Backend environment variables file.
+- vitest.config.js: Backend Vitest configuration.
+- vitest.unit.config.js: Backend Vitest configuration.
+- POSTMAN_TESTS.md: Project file used by app/tooling/tests.
+- TEST_EVIDENCE.md: Project file used by app/tooling/tests.
+
+[backend\src]
+- app.js: Creates Express app and wires middleware/routes.
+- routes.js: Registers all module routes.
+- server.js: Starts the backend server process.
+
+[backend\src\config]
+- db.js: Database (MongoDB) connection setup.
+- env.js: Loads and validates environment variables.
+
+[backend\src\modules\admin]
+- admin.controller.js: Request handlers and response logic.
+- admin.routes.js: Express route definitions.
+- admin.utils.js: Utility/helper functions.
+
+[backend\src\modules\appointments]
+- appointments.controller.js: Request handlers and response logic.
+- appointments.model.js: Database model/schema definition.
+- appointments.routes.js: Express route definitions.
+- appointments.validation.js: Request payload validation rules.
+
+[backend\src\modules\auth]
+- auth.controller.js: Request handlers and response logic.
+- auth.routes.js: Express route definitions.
+- auth.utils.js: Utility/helper functions.
+- auth.validation.js: Request payload validation rules.
+
+[backend\src\modules\coach]
+- coach.controller.js: Request handlers and response logic.
+- coach.routes.js: Express route definitions.
+- coachProfile.model.js: Database model/schema definition.
+- coachScheduling.controller.js: Request handlers and response logic.
+- coachScheduling.model.js: Database model/schema definition.
+- coachScheduling.utils.js: Utility/helper functions.
+- coachScheduling.validation.js: Request payload validation rules.
+
+[backend\src\modules\dietitian]
+- dietitian.controller.js: Request handlers and response logic.
+- dietitian.routes.js: Express route definitions.
+- dietitian.validation.js: Request payload validation rules.
+- dietitianProfile.model.js: Database model/schema definition.
+- dietitianScheduling.model.js: Database model/schema definition.
+- dietitianScheduling.utils.js: Utility/helper functions.
+
+[backend\src\modules\faqs]
+- faqs.controller.js: Request handlers and response logic.
+- faqs.model.js: Database model/schema definition.
+- faqs.routes.js: Express route definitions.
+- faqs.validation.js: Request payload validation rules.
+
+[backend\src\modules\feedbacks]
+- feedbacks.controller.js: Request handlers and response logic.
+- feedbacks.model.js: Database model/schema definition.
+- feedbacks.routes.js: Express route definitions.
+- feedbacks.validation.js: Request payload validation rules.
+
+[backend\src\modules\health]
+- health.controller.js: Request handlers and response logic.
+- health.routes.js: Express route definitions.
+
+[backend\src\modules\lockers]
+- lockers.controller.js: Request handlers and response logic.
+- lockers.model.js: Database model/schema definition.
+- lockers.routes.js: Express route definitions.
+- lockers.validation.js: Request payload validation rules.
+
+[backend\src\modules\mealPlans]
+- mealPlans.controller.js: Request handlers and response logic.
+- mealPlans.mapper.js: Data mapping/transformation helpers.
+- mealPlans.model.js: Database model/schema definition.
+- mealPlans.routes.js: Express route definitions.
+- mealPlans.search.utils.js: Utility/helper functions.
+- mealPlans.service.js: Business/service layer logic.
+- mealPlans.validation.js: Request payload validation rules.
+
+[backend\src\modules\notifications]
+- notifications.controller.js: Request handlers and response logic.
+- notifications.model.js: Database model/schema definition.
+- notifications.routes.js: Express route definitions.
+- notifications.service.js: Business/service layer logic.
+
+[backend\src\modules\nutrition]
+- nutrition.controller.js: Request handlers and response logic.
+- nutrition.model.js: Database model/schema definition.
+- nutrition.routes.js: Express route definitions.
+
+[backend\src\modules\progress]
+- progress.controller.js: Request handlers and response logic.
+- progress.model.js: Database model/schema definition.
+- progress.routes.js: Express route definitions.
+- progress.scoring.js: Scoring/calculation helper logic.
+- progress.validation.js: Request payload validation rules.
+
+[backend\src\modules\promotions]
+- promotions.controller.js: Request handlers and response logic.
+- promotions.model.js: Database model/schema definition.
+- promotions.routes.js: Express route definitions.
+- promotions.validation.js: Request payload validation rules.
+
+[backend\src\modules\users]
+- users.controller.js: Request handlers and response logic.
+- users.model.js: Database model/schema definition.
+- users.routes.js: Express route definitions.
+
+[backend\src\modules\workouts]
+- workouts.controller.js: Request handlers and response logic.
+- workouts.mapper.js: Data mapping/transformation helpers.
+- workouts.model.js: Database model/schema definition.
+- workouts.routes.js: Express route definitions.
+- workouts.service.js: Business/service layer logic.
+- workouts.session.utils.js: Utility/helper functions.
+- workouts.validation.js: Request payload validation rules.
+
+[backend\src\shared\constants]
+- branches.js: Project file used by app/tooling/tests.
+- httpStatus.js: Project file used by app/tooling/tests.
+
+[backend\src\shared\errors]
+- AppError.js: Project file used by app/tooling/tests.
+
+[backend\src\shared\middleware\auth]
+- authenticateJWT.js: JWT authentication middleware.
+- authorizeRoles.js: Role-based authorization middleware.
+- requireOwnership.js: Ownership authorization middleware.
+
+[backend\src\shared\middleware]
+- errorHandler.js: Project file used by app/tooling/tests.
+- notFound.js: Project file used by app/tooling/tests.
+
+[backend\src\shared\utils]
+- asyncHandler.js: Project file used by app/tooling/tests.
+- roles.js: Project file used by app/tooling/tests.
+
+[backend\scripts]
+- importSriLankaFoods.js: Maintenance/data script.
+
+[backend\data\nutrition-input]
+- Sri Lanka Food Composition Table_20240514.csv: Input dataset file.
+- SrilankanCommonFoods.xlsx: Input dataset file.
+
+[backend\test]
+- dietitian-slot.validation.smoke.js: Smoke test for critical behavior.
+- ownership-guards.smoke.js: Smoke test for critical behavior.
+- security-routes.smoke.js: Smoke test for critical behavior.
+
+[backend\tests\helpers]
+- auth.js: Project file used by app/tooling/tests.
+
+[backend\tests\integration]
+- access-matrix.test.js: Automated test file.
+- admin.test.js: Automated test file.
+- auth.test.js: Automated test file.
+- coach.test.js: Automated test file.
+- dietitian.test.js: Automated test file.
+- mealplans.test.js: Automated test file.
+- ownership.test.js: Automated test file.
+- workouts.test.js: Automated test file.
+
+[backend\tests]
+- setup.js: Project file used by app/tooling/tests.
+
+[backend\tests\unit]
+- admin.utils.unit.test.js: Automated test file.
+- auth.utils.unit.test.js: Automated test file.
+- auth.validation.unit.test.js: Automated test file.
+- authorizeRoles.unit.test.js: Automated test file.
+- coachScheduling.utils.unit.test.js: Automated test file.
+- coachScheduling.validation.unit.test.js: Automated test file.
+- dietitian.validation.unit.test.js: Automated test file.
+- dietitianScheduling.utils.unit.test.js: Automated test file.
+- mealplans.mapper.unit.test.js: Automated test file.
+- mealplans.search.utils.unit.test.js: Automated test file.
+- mealplans.service.unit.test.js: Automated test file.
+- mealplans.validation.unit.test.js: Automated test file.
+- notifications.service.unit.test.js: Automated test file.
+- nutrition.controller.unit.test.js: Automated test file.
+- progress.validation.unit.test.js: Automated test file.
+- promotions.validation.unit.test.js: Automated test file.
+- roles.unit.test.js: Automated test file.
+- workouts.mapper.unit.test.js: Automated test file.
+- workouts.service.unit.test.js: Automated test file.
+- workouts.session.utils.unit.test.js: Automated test file.
+- workouts.validation.unit.test.js: Automated test file.
+
+ROOT (shared tooling)
+---------------------
+- .gitignore: Git ignore rules.
+- README.md: Project documentation.
+- index.html: Frontend HTML template.
+- package.json: Root dependencies and scripts.
+- package-lock.json: Locked root dependency versions.
+- vite.config.js: Vite configuration.
+- eslint.config.js: ESLint configuration.

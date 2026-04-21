@@ -1,0 +1,153 @@
+GYMPRO PROJECT STRUCTURE OVERVIEW
+================================
+
+Introduction
+------------
+This document gives a simple overview of the GymPro codebase.
+It explains what the main frontend and backend folders contain and what the common file types do.
+
+Project Root (high level)
+-------------------------
+- frontend/: React app source wrapper (main UI code is in frontend/src).
+- backend/: Node/Express API server, business logic, and database models.
+- public/: Static assets served by Vite.
+- dist/: Frontend build output.
+- package.json: Root scripts/dependencies for the frontend build tooling.
+- vite.config.js: Vite configuration.
+
+
+FRONTEND
+========
+Path: frontend/src
+
+Frontend folder structure
+-------------------------
+frontend/src/
+- app/
+  - App.jsx: Main app composition.
+  - main.jsx: Frontend bootstrap entry.
+  - providers/: Global providers (theme/context wrappers).
+  - router/: App routes, protected routes, navigation flow.
+- assets/
+  - react.svg: Static asset example.
+- features/
+  - admin/
+    - api/: Admin API functions.
+    - pages/: Admin dashboard pages (users, reports, settings, lockers, etc.).
+  - auth/
+    - api/: Login/register API calls.
+    - model/: Auth context and auth state model.
+    - pages/: Login and Register screens.
+  - coach/
+    - api/: Coach API functions.
+    - pages/: Coach dashboards and pages (clients, scheduling, workouts, FAQs).
+  - dietitian/
+    - api/: Dietitian API functions.
+    - components/: Reusable dietitian dashboard widgets.
+    - hooks/: Dietitian-specific data hooks.
+    - pages/: Dietitian pages (dashboard, clients, meal plans, FAQs).
+    - utils/: Dietitian helper utilities.
+  - user/
+    - api/: User API functions.
+    - components/: User reusable UI components.
+    - data/: Mock/static data used by user features.
+    - hooks/: User feature hooks.
+    - pages/: User dashboard pages (profile, workouts, meal plans, coaches, dietitians, etc.).
+    - utils/: User helper logic (risk scoring, meal plan helpers).
+- pages/
+  - errors/: Generic error pages (Not Found, Unauthorized).
+- shared/
+  - api/: Shared API clients (axios client, notifications, faqs).
+  - components/
+    - faq/: Shared FAQ management UI.
+    - layout/: App shell, sidebar, topbar, notification drawer.
+    - ui/: Common UI building blocks (stat card, table, loading spinner, page header).
+  - config/: Shared navigation/config constants.
+  - hooks/: Shared hooks (theme/auth access helpers).
+  - theme/: MUI theme setup.
+  - utils/: Shared helper functions and constants.
+- test/
+  - setupTests.js: Frontend test setup.
+- App.jsx, App.css, main.jsx, index.css: App shell and global styles/entry points.
+
+Simple file naming guide (frontend)
+-----------------------------------
+- *.jsx: React component/page.
+- *.api.js: API call wrappers.
+- *.hook.js or hooks/*: Reusable data/state hooks.
+- *.utils.js: Pure helper logic.
+- *.test.jsx / *.test.js: Unit/component tests.
+
+
+BACKEND
+=======
+Path: backend/src
+
+Backend folder structure
+------------------------
+backend/
+- src/
+  - app.js: Express app assembly (middlewares + routes).
+  - server.js: Server startup file.
+  - routes.js: Main route registration across modules.
+  - config/
+    - db.js: MongoDB connection setup.
+    - env.js: Environment variable loading/validation.
+  - modules/
+    - admin/: Admin routes/controllers/helpers.
+    - appointments/: Appointment APIs, model, validation.
+    - auth/: Login/register/auth utilities and validation.
+    - coach/: Coach profile + coach scheduling domain logic.
+    - dietitian/: Dietitian profile + scheduling domain logic.
+    - faqs/: FAQ CRUD APIs.
+    - feedbacks/: Feedback APIs and model.
+    - health/: Health-check endpoint(s).
+    - lockers/: Locker assignment APIs.
+    - mealPlans/: Meal plan generation/search/mapping/services.
+    - notifications/: Notification APIs, service, model.
+    - nutrition/: Nutrition dataset APIs/model.
+    - progress/: User progress tracking and scoring logic.
+    - promotions/: Promotions APIs/model/validation.
+    - users/: User management APIs/model.
+    - workouts/: Workout plans/sessions/services/validation.
+  - shared/
+    - constants/: Shared constants (HTTP status, branches).
+    - errors/: Shared AppError class.
+    - middleware/
+      - auth/: JWT auth, role authorization, ownership guard.
+      - errorHandler.js: Global error middleware.
+      - notFound.js: 404 fallback middleware.
+    - utils/: Shared utility helpers (async wrapper, role helpers).
+- scripts/
+  - importSriLankaFoods.js: Data import utility script.
+- data/
+  - nutrition-input/: Raw nutrition source files (CSV/XLSX).
+- test/
+  - *.smoke.js: Lightweight smoke checks.
+- tests/
+  - integration/: API-level integration tests.
+  - unit/: Unit tests by module/utility.
+  - helpers/: Shared test helpers.
+  - setup.js: Backend test setup.
+- package.json: Backend scripts/dependencies.
+- .env / .env.test / .env.test.example: Environment configuration.
+- vitest.config.js / vitest.unit.config.js: Test runner configuration.
+
+Simple file naming guide (backend)
+----------------------------------
+- *.routes.js: Express route definitions.
+- *.controller.js: Request handlers and response shaping.
+- *.service.js: Business logic used by controllers.
+- *.model.js: Mongoose schema/model.
+- *.validation.js: Zod/schema request validation.
+- *.mapper.js: Data transform between DB and API shape.
+- *.utils.js: Module helper functions.
+
+
+How frontend and backend connect
+--------------------------------
+- Frontend calls backend using axios wrappers in feature/shared api files.
+- Backend validates/authenticates requests, applies role/ownership checks, then runs module logic.
+- MongoDB models store persistent data for users, workouts, meal plans, schedules, etc.
+
+End of document.

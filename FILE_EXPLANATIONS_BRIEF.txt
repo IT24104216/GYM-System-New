@@ -1,0 +1,301 @@
+﻿GYMPRO FILE EXPLANATIONS (BRIEF)
+===============================
+
+How to read this file:
+- Each line has: relative path -> short description.
+- Descriptions are intentionally simple and brief.
+
+.gitignore -> Git ignore rules for untracked/generated files.
+backend\.env -> Environment variables for local/test runtime.
+backend\.env.test -> Environment variables for local/test runtime.
+backend\.env.test.example -> Environment variables for local/test runtime.
+backend\data\nutrition-input\Sri Lanka Food Composition Table_20240514.csv -> Source dataset file used for nutrition import/processing.
+backend\data\nutrition-input\SrilankanCommonFoods.xlsx -> Source dataset file used for nutrition import/processing.
+backend\evidence\04-coach-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\05-dietitian-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\06-workouts-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\08-api-full-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\09-smoke-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v10.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v2.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v3.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v4.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v5.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v6.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v7.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v8.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\10-unit-output-v9.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\16-frontend-unit-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\16-frontend-unit-output-v2.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\16-frontend-unit-output-v3.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\17-frontend-unit-output-v4.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\19-usercoaches-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\20-usercoachfeedbacks-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\21-userdietitians-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\22-usermealplan-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\23-userprofile-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\24-coachworkoutplans-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\25-coachapi-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\26-dietitian-appointments-table-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\27-dietitian-timeslots-panel-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\28-dietitian-clients-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\29-dietitian-mealplans-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\31-admin-users-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\32-admin-api-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\33-admin-lockers-output.txt -> Project file used by the application, tooling, or tests.
+backend\evidence\34-admin-faqs-output.txt -> Project file used by the application, tooling, or tests.
+backend\package.json -> Project file used by the application, tooling, or tests.
+backend\package-lock.json -> Project file used by the application, tooling, or tests.
+backend\POSTMAN_TESTS.md -> Manual/API test instructions for Postman.
+backend\scripts\importSriLankaFoods.js -> Utility/maintenance script for backend data operations.
+backend\src\app.js -> Express app setup with middleware and routes.
+backend\src\config\db.js -> Database connection bootstrapping (MongoDB).
+backend\src\config\env.js -> Environment variable loading and validation.
+backend\src\modules\admin\admin.controller.js -> Request handlers for this backend module.
+backend\src\modules\admin\admin.routes.js -> Express routes for this backend module.
+backend\src\modules\admin\admin.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\appointments\appointments.controller.js -> Request handlers for this backend module.
+backend\src\modules\appointments\appointments.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\appointments\appointments.routes.js -> Express routes for this backend module.
+backend\src\modules\appointments\appointments.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\auth\auth.controller.js -> Request handlers for this backend module.
+backend\src\modules\auth\auth.routes.js -> Express routes for this backend module.
+backend\src\modules\auth\auth.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\auth\auth.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\coach\coach.controller.js -> Request handlers for this backend module.
+backend\src\modules\coach\coach.routes.js -> Express routes for this backend module.
+backend\src\modules\coach\coachProfile.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\coach\coachScheduling.controller.js -> Request handlers for this backend module.
+backend\src\modules\coach\coachScheduling.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\coach\coachScheduling.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\coach\coachScheduling.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\dietitian\dietitian.controller.js -> Request handlers for this backend module.
+backend\src\modules\dietitian\dietitian.routes.js -> Express routes for this backend module.
+backend\src\modules\dietitian\dietitian.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\dietitian\dietitianProfile.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\dietitian\dietitianScheduling.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\dietitian\dietitianScheduling.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\faqs\faqs.controller.js -> Request handlers for this backend module.
+backend\src\modules\faqs\faqs.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\faqs\faqs.routes.js -> Express routes for this backend module.
+backend\src\modules\faqs\faqs.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\feedbacks\feedbacks.controller.js -> Request handlers for this backend module.
+backend\src\modules\feedbacks\feedbacks.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\feedbacks\feedbacks.routes.js -> Express routes for this backend module.
+backend\src\modules\feedbacks\feedbacks.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\health\health.controller.js -> Request handlers for this backend module.
+backend\src\modules\health\health.routes.js -> Express routes for this backend module.
+backend\src\modules\lockers\lockers.controller.js -> Request handlers for this backend module.
+backend\src\modules\lockers\lockers.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\lockers\lockers.routes.js -> Express routes for this backend module.
+backend\src\modules\lockers\lockers.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\mealPlans\mealPlans.controller.js -> Request handlers for this backend module.
+backend\src\modules\mealPlans\mealPlans.mapper.js -> Mapper utilities to transform module data shapes.
+backend\src\modules\mealPlans\mealPlans.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\mealPlans\mealPlans.routes.js -> Express routes for this backend module.
+backend\src\modules\mealPlans\mealPlans.search.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\mealPlans\mealPlans.service.js -> Business/service-layer logic for this module.
+backend\src\modules\mealPlans\mealPlans.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\notifications\notifications.controller.js -> Request handlers for this backend module.
+backend\src\modules\notifications\notifications.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\notifications\notifications.routes.js -> Express routes for this backend module.
+backend\src\modules\notifications\notifications.service.js -> Business/service-layer logic for this module.
+backend\src\modules\nutrition\nutrition.controller.js -> Request handlers for this backend module.
+backend\src\modules\nutrition\nutrition.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\nutrition\nutrition.routes.js -> Express routes for this backend module.
+backend\src\modules\progress\progress.controller.js -> Request handlers for this backend module.
+backend\src\modules\progress\progress.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\progress\progress.routes.js -> Express routes for this backend module.
+backend\src\modules\progress\progress.scoring.js -> Scoring/algorithm logic for progress computations.
+backend\src\modules\progress\progress.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\promotions\promotions.controller.js -> Request handlers for this backend module.
+backend\src\modules\promotions\promotions.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\promotions\promotions.routes.js -> Express routes for this backend module.
+backend\src\modules\promotions\promotions.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\modules\users\users.controller.js -> Request handlers for this backend module.
+backend\src\modules\users\users.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\users\users.routes.js -> Express routes for this backend module.
+backend\src\modules\workouts\workouts.controller.js -> Request handlers for this backend module.
+backend\src\modules\workouts\workouts.mapper.js -> Mapper utilities to transform module data shapes.
+backend\src\modules\workouts\workouts.model.js -> Mongoose schema/model for persistent data.
+backend\src\modules\workouts\workouts.routes.js -> Express routes for this backend module.
+backend\src\modules\workouts\workouts.service.js -> Business/service-layer logic for this module.
+backend\src\modules\workouts\workouts.session.utils.js -> Module helper functions and domain utilities.
+backend\src\modules\workouts\workouts.validation.js -> Zod/schema validation for requests and payloads.
+backend\src\routes.js -> Central module route registration file.
+backend\src\server.js -> Server entry point that starts the backend process.
+backend\src\shared\constants\branches.js -> Shared backend constants used across modules.
+backend\src\shared\constants\httpStatus.js -> Shared backend constants used across modules.
+backend\src\shared\errors\AppError.js -> Shared custom error class definitions.
+backend\src\shared\middleware\auth\authenticateJWT.js -> JWT authentication middleware.
+backend\src\shared\middleware\auth\authorizeRoles.js -> Role-based authorization middleware.
+backend\src\shared\middleware\auth\requireOwnership.js -> Ownership guard middleware to enforce user-resource ownership.
+backend\src\shared\middleware\errorHandler.js -> Central Express error-handling middleware.
+backend\src\shared\middleware\notFound.js -> 404 catch-all middleware for unknown routes.
+backend\src\shared\utils\asyncHandler.js -> Utility/helper functions for this feature/domain.
+backend\src\shared\utils\roles.js -> Utility/helper functions for this feature/domain.
+backend\test\dietitian-slot.validation.smoke.js -> Quick smoke test verifying critical behavior.
+backend\test\ownership-guards.smoke.js -> Quick smoke test verifying critical behavior.
+backend\test\security-routes.smoke.js -> Quick smoke test verifying critical behavior.
+backend\TEST_EVIDENCE.md -> Recorded evidence/results for test executions.
+backend\tests\helpers\auth.js -> Shared helpers used by backend test suites.
+backend\tests\integration\access-matrix.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\admin.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\auth.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\coach.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\dietitian.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\mealplans.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\ownership.test.js -> Automated test file for unit/component behavior.
+backend\tests\integration\workouts.test.js -> Automated test file for unit/component behavior.
+backend\tests\setup.js -> Global setup for backend test environment.
+backend\tests\unit\admin.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\auth.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\auth.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\authorizeRoles.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\coachScheduling.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\coachScheduling.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\dietitian.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\dietitianScheduling.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\mealplans.mapper.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\mealplans.search.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\mealplans.service.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\mealplans.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\notifications.service.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\nutrition.controller.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\progress.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\promotions.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\roles.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\workouts.mapper.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\workouts.service.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\workouts.session.utils.unit.test.js -> Automated test file for unit/component behavior.
+backend\tests\unit\workouts.validation.unit.test.js -> Automated test file for unit/component behavior.
+backend\vitest.config.js -> Vitest test runner configuration.
+backend\vitest.unit.config.js -> Vitest test runner configuration.
+eslint.config.js -> ESLint linting rules and configuration.
+frontend\src\App.css -> Global stylesheet for base app styling.
+frontend\src\App.jsx -> Legacy/default root app component.
+frontend\src\app\App.jsx -> Project file used by the application, tooling, or tests.
+frontend\src\app\main.jsx -> Main frontend app bootstrap entry under app/.
+frontend\src\app\providers\ThemeContext.jsx -> Theme mode/context provider for UI styling.
+frontend\src\app\router\AppRouter.jsx -> Main route map for all frontend pages.
+frontend\src\app\router\ProtectedRoute.jsx -> Route guard that blocks unauthorized role access.
+frontend\src\app\router\ProtectedRoute.test.jsx -> Automated test file for unit/component behavior.
+frontend\src\assets\react.svg -> Frontend static asset file.
+frontend\src\features\admin\api\admin.api.js -> API request wrappers for this feature/domain.
+frontend\src\features\admin\api\admin.api.test.js -> API request wrappers for this feature/domain.
+frontend\src\features\admin\pages\AdminDashboard.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminFaqs.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminFaqs.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminLockers.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminLockers.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminPromotions.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminPromotions.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminReports.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminSettings.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminSettings.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminUsers.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\admin\pages\AdminUsers.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\auth\api\auth.api.js -> API request wrappers for this feature/domain.
+frontend\src\features\auth\model\AuthContext.jsx -> State/model/context definition used by the feature.
+frontend\src\features\auth\model\AuthContext.test.jsx -> State/model/context definition used by the feature.
+frontend\src\features\auth\pages\LoginPage.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\auth\pages\LoginPage.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\auth\pages\RegisterPage.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\auth\pages\RegisterPage.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\api\coach.api.js -> API request wrappers for this feature/domain.
+frontend\src\features\coach\api\coach.api.test.js -> API request wrappers for this feature/domain.
+frontend\src\features\coach\pages\CoachClients.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachClients.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachDashboard.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachDashboard.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachFaqs.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachScheduling.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachScheduling.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachWorkoutPlans.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\coach\pages\CoachWorkoutPlans.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\api\dietitian.api.js -> API request wrappers for this feature/domain.
+frontend\src\features\dietitian\components\DietitianAppointmentsTable.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianAppointmentsTable.test.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianDashboardHeaderControls.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianMembersPanel.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianStatsGrid.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianTimeSlotsPanel.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\components\DietitianTimeSlotsPanel.test.jsx -> Reusable feature UI component.
+frontend\src\features\dietitian\hooks\useDietitianDashboardData.js -> Reusable React hook for data/state logic.
+frontend\src\features\dietitian\hooks\useDietitianDashboardData.test.js -> Reusable React hook for data/state logic.
+frontend\src\features\dietitian\pages\DietitianClients.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\pages\DietitianClients.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\pages\DietitianDashboard.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\pages\DietitianFaqs.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\pages\DietitianMealPlans.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\pages\DietitianMealPlans.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\dietitian\utils\dietitianDashboard.utils.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\dietitian\utils\dietitianDashboard.utils.test.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\dietitian\utils\mealPlanStorage.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\dietitian\utils\mealPlanStorage.test.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\user\api\user.api.js -> API request wrappers for this feature/domain.
+frontend\src\features\user\components\CalorieTooltip.jsx -> Reusable feature UI component.
+frontend\src\features\user\components\CalorieTooltip.test.jsx -> Reusable feature UI component.
+frontend\src\features\user\components\MealPlanRiskMonitorCard.jsx -> Reusable feature UI component.
+frontend\src\features\user\components\MealPlanRiskMonitorCard.test.jsx -> Reusable feature UI component.
+frontend\src\features\user\components\UserPromotionsPopup.jsx -> Reusable feature UI component.
+frontend\src\features\user\components\UserPromotionsPopup.test.jsx -> Reusable feature UI component.
+frontend\src\features\user\data\promotions.mock.js -> Project file used by the application, tooling, or tests.
+frontend\src\features\user\hooks\useUserMealPlanData.js -> Reusable React hook for data/state logic.
+frontend\src\features\user\hooks\useUserMealPlanData.test.js -> Reusable React hook for data/state logic.
+frontend\src\features\user\pages\UserAdsPromotions.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserCoaches.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserCoaches.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserCoachFeedbacks.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserCoachFeedbacks.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserDashboard.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserDietitianFeedbacks.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserDietitians.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserDietitians.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserFaqs.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserLockers.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserMealPlan.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserMealPlan.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserProfile.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserProfile.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserProgress.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserWorkouts.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\pages\UserWorkouts.test.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\features\user\utils\mealRiskScoring.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\user\utils\mealRiskScoring.test.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\user\utils\userMealPlan.utils.js -> Utility/helper functions for this feature/domain.
+frontend\src\features\user\utils\userMealPlan.utils.test.js -> Utility/helper functions for this feature/domain.
+frontend\src\index.css -> Global stylesheet for base app styling.
+frontend\src\main.jsx -> Legacy/default frontend entry bootstrap file.
+frontend\src\pages\errors\NotFoundPage.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\pages\errors\UnauthorizedPage.jsx -> Feature page component (screen-level UI and behavior).
+frontend\src\shared\api\axiosClient.js -> Shared Axios instance with base config/interceptors.
+frontend\src\shared\api\faqs.api.js -> API request wrappers for this feature/domain.
+frontend\src\shared\api\notifications.api.js -> API request wrappers for this feature/domain.
+frontend\src\shared\components\faq\FaqManagerPage.jsx -> Reusable feature UI component.
+frontend\src\shared\components\layout\AppShell.jsx -> Primary dashboard layout wrapper (sidebar/topbar/content).
+frontend\src\shared\components\layout\NotificationsDrawer.jsx -> Reusable feature UI component.
+frontend\src\shared\components\layout\Sidebar.jsx -> Reusable feature UI component.
+frontend\src\shared\components\layout\Topbar.jsx -> Reusable feature UI component.
+frontend\src\shared\components\ui\DataTable.jsx -> Reusable feature UI component.
+frontend\src\shared\components\ui\LoadingSpinner.jsx -> Reusable feature UI component.
+frontend\src\shared\components\ui\PageHeader.jsx -> Reusable feature UI component.
+frontend\src\shared\components\ui\StatCard.jsx -> Reusable feature UI component.
+frontend\src\shared\config\navConfig.js -> Shared frontend configuration constants (for nav/routes/etc.).
+frontend\src\shared\config\navConfig.test.js -> Automated test file for unit/component behavior.
+frontend\src\shared\hooks\useAppTheme.js -> Reusable React hook for data/state logic.
+frontend\src\shared\hooks\useAuth.js -> Reusable React hook for data/state logic.
+frontend\src\shared\theme\muiTheme.js -> Global MUI theme configuration.
+frontend\src\shared\utils\branches.js -> Utility/helper functions for this feature/domain.
+frontend\src\shared\utils\constants.js -> Utility/helper functions for this feature/domain.
+frontend\src\shared\utils\helpers.js -> Utility/helper functions for this feature/domain.
+frontend\src\shared\utils\storage.js -> Utility/helper functions for this feature/domain.
+frontend\src\shared\utils\storage.test.js -> Utility/helper functions for this feature/domain.
+frontend\src\test\setupTests.js -> Project file used by the application, tooling, or tests.
+index.html -> HTML template used by Vite for the frontend app.
+package.json -> Root npm scripts and dependencies for frontend tooling.
+package-lock.json -> Exact locked dependency versions for reproducible installs.
+PROJECT_STRUCTURE_OVERVIEW.txt -> Project file used by the application, tooling, or tests.
+README.md -> Project readme and setup notes.
+vite.config.js -> Vite bundler/dev-server configuration.

@@ -1,0 +1,43 @@
+
+> gympro-client@0.0.0 test:ui
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client[39m
+
+ [32m✓[39m frontend/src/features/dietitian/utils/dietitianDashboard.utils.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 75[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/hooks/useDietitianDashboardData.test.js [2m([22m[2m2 tests[22m[2m)[22m[33m 372[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/model/AuthContext.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1673[2mms[22m[39m
+     [33m[2m✓[22m[39m supports login, update, register and logout flows [33m 1436[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/utils/mealRiskScoring.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 24[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/hooks/useUserMealPlanData.test.js [2m([22m[2m3 tests[22m[2m)[22m[33m 410[2mms[22m[39m
+ [32m✓[39m frontend/src/app/router/ProtectedRoute.test.jsx [2m([22m[2m4 tests[22m[2m)[22m[33m 917[2mms[22m[39m
+     [33m[2m✓[22m[39m shows loading spinner while auth is loading [33m 810[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/CalorieTooltip.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[33m 387[2mms[22m[39m
+     [33m[2m✓[22m[39m shows date and calories when active [32m 300[2mms[22m[39m
+ [32m✓[39m frontend/src/features/dietitian/utils/mealPlanStorage.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 18[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/pages/UserWorkouts.test.jsx [2m([22m[2m1 test[22m[2m)[22m[33m 1251[2mms[22m[39m
+     [33m[2m✓[22m[39m renders workouts sections [33m 1235[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/UserPromotionsPopup.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 1764[2mms[22m[39m
+     [33m[2m✓[22m[39m loads promotions and navigates on CTA click [33m 1702[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/components/MealPlanRiskMonitorCard.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[33m 2076[2mms[22m[39m
+     [33m[2m✓[22m[39m renders neutral state text [33m 478[2mms[22m[39m
+     [33m[2m✓[22m[39m shows warning actions and triggers handlers for risk streak [33m 1517[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/RegisterPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 4087[2mms[22m[39m
+     [33m[2m✓[22m[39m renders registration form [33m 3032[2mms[22m[39m
+     [33m[2m✓[22m[39m validates password mismatch before API call [33m 1044[2mms[22m[39m
+ [32m✓[39m frontend/src/features/admin/pages/AdminSettings.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 5444[2mms[22m[39m
+     [33m[2m✓[22m[39m loads and displays admin settings data [33m 1896[2mms[22m[39m
+     [33m[2m✓[22m[39m saves updated settings [33m 3538[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/utils/storage.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m frontend/src/features/auth/pages/LoginPage.test.jsx [2m([22m[2m2 tests[22m[2m)[22m[33m 7268[2mms[22m[39m
+     [33m[2m✓[22m[39m renders login form fields [33m 3556[2mms[22m[39m
+     [33m[2m✓[22m[39m shows API error when login fails [33m 3703[2mms[22m[39m
+ [32m✓[39m frontend/src/shared/config/navConfig.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 14[2mms[22m[39m
+ [32m✓[39m frontend/src/features/user/utils/userMealPlan.utils.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m17 passed[39m[22m[90m (17)[39m
+[2m      Tests [22m [1m[32m49 passed[39m[22m[90m (49)[39m
+[2m   Start at [22m 03:08:07
+[2m   Duration [22m 23.96s[2m (transform 7.74s, setup 8.61s, import 73.31s, tests 25.80s, environment 97.46s)[22m
+

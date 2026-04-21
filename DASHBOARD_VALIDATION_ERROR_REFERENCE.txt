@@ -1,0 +1,300 @@
+GYMPRO DASHBOARD VALIDATION + ERROR HANDLING REFERENCE
+======================================================
+
+Scope
+-----
+This file maps sidebar pages in each dashboard to:
+1) Frontend input validation and user-visible error/success messages.
+2) Backend route guards, schema validation, and error handling.
+All references include file + line numbers.
+
+Global Backend Guards/Error Formatter
+-------------------------------------
+- backend/src/shared/middleware/auth/requireOwnership.js:6,13,37
+  Ownership checks; returns 401/403 messages like 'Unauthorized' and 'Forbidden: ownership mismatch'.
+- backend/src/shared/middleware/errorHandler.js:6,17
+  Normalizes server errors into JSON response with message and status.
+
+
+USER DASHBOARD (Sidebar)
+========================
+
+1) Dashboard -> frontend/src/features/user/pages/UserDashboard.jsx
+- Frontend:
+  - Data load try/catch fallback: lines 149-159.
+  - No form input validation in this page.
+- Backend:
+  - Mostly reads profile/promotions data; no page-level submit validation from this screen.
+
+2) Ads & Promotions -> frontend/src/features/user/pages/UserAdsPromotions.jsx
+- Frontend:
+  - API load try/catch fallback: lines 31,44.
+  - No form inputs (read-only page).
+- Backend:
+  - promotions public endpoint route: backend/src/modules/promotions/promotions.routes.js:16
+  - public query schema validation: backend/src/modules/promotions/promotions.validation.js:66-68
+  - controller parse + response: backend/src/modules/promotions/promotions.controller.js:172,205
+
+3) Workouts -> frontend/src/features/user/pages/UserWorkouts.jsx
+- Frontend:
+  - Session API error handling with user messages:
+    - finish session fallback: lines 732-733
+    - timer required message: line 739
+    - progress update fallback: lines 784,788
+    - start session fallback: lines 820-821
+  - Multiple async try/catch blocks: lines 61-75, 521-530, 609-623, 660-671, 699-710.
+- Backend:
+  - route scope + role checks: backend/src/modules/workouts/workouts.routes.js:29,35,38,44,58-71
+  - ownership guard on session body userId: workouts.routes.js:59,65,71
+  - schema validation (duration, exercises, session payloads): workouts.validation.js:51-61, 91-104
+  - controller validation/error messages:
+    - parse validation wrapper: workouts.controller.js:44-48
+    - start/progress/finish conflicts and forbidden checks: workouts.controller.js:330,333,336,381,387,449,489
+    - success/error messages: workouts.controller.js:363,422,526
+
+4) Lockers -> frontend/src/features/user/pages/UserLockers.jsx
+- Frontend:
+  - load errors: lines 51-54
+  - submit errors: lines 74-87
+  - error alert: lines 142-145
+  - toast success/error surface: lines 295-306
+- Backend:
+  - routes with ownership scope for user lockers:
+    - bookings read guard: backend/src/modules/lockers/lockers.routes.js:25-29
+    - booking create guard: lockers.routes.js:32-36
+  - schema validation:
+    - create booking schema: lockers.validation.js:37-42
+    - booking status update schema: lockers.validation.js:56-58
+  - controller errors/messages:
+    - validation wrapper: lockers.controller.js:20-24
+    - locker unavailable/conflicts/not found: lockers.controller.js:191,194,203,264,267,272,292
+    - user-facing success messages: lockers.controller.js:237,331
+
+5) FAQs -> frontend/src/features/user/pages/UserFaqs.jsx
+- Frontend:
+  - API load try/catch fallback: lines 25,33.
+  - No direct input validation on this user read-only FAQ page.
+- Backend:
+  - list route is public read: backend/src/modules/faqs/faqs.routes.js:15
+  - query validation (search/page/limit): faqs.validation.js:9-15
+  - controller parse + validation throw: faqs.controller.js:14-18,46
+
+6) Profile -> frontend/src/features/user/pages/UserProfile.jsx
+- Frontend:
+  - Static placeholder page; no form validation/error handling.
+- Backend:
+  - No active API wiring from this page currently.
+
+
+ADMIN DASHBOARD (Sidebar)
+=========================
+
+1) Overview -> frontend/src/features/admin/pages/AdminDashboard.jsx
+- Frontend:
+  - data load try/catch: lines 111-120.
+  - read-only dashboard (no form submission validation).
+- Backend:
+  - admin stats/report endpoints under admin auth:
+    - routes: backend/src/modules/admin/admin.routes.js:22,28,29
+    - controller responses: admin.controller.js:272,393
+
+2) Users -> frontend/src/features/admin/pages/AdminUsers.jsx
+- Frontend:
+  - load failure toast: lines 153-157
+  - update role/status/delete error toasts: lines 189-198, 204-210, 220-226
+  - toast surface: lines 487-490
+- Backend:
+  - routes: admin.routes.js:24-27
+  - controller validations/errors:
+    - invalid role/status: admin.controller.js:214,224
+    - not found: admin.controller.js:195,206,244
+    - success messages: admin.controller.js:236,248
+
+3) Reports -> frontend/src/features/admin/pages/AdminReports.jsx
+- Frontend:
+  - data load try/catch: lines 142-145.
+- Backend:
+  - admin reports endpoint: admin.routes.js:29
+  - report response generation: admin.controller.js:393
+
+4) Promotions -> frontend/src/features/admin/pages/AdminPromotions.jsx
+- Frontend:
+  - client validations and messages:
+    - required fields: line 125
+    - budget > 0: line 130
+    - end date after start date: line 135
+    - URL validity checks: lines 145,154
+  - save/delete API errors: lines 179,206
+  - error alert UI: lines 419-422
+- Backend:
+  - routes (admin only): promotions.routes.js:17-20
+  - schema validation:
+    - link validity/date rules: promotions.validation.js:19,39,51
+  - controller errors/messages:
+    - validation wrapper: promotions.controller.js:36-40
+    - not found + validation errors: promotions.controller.js:119,123,128,166
+    - success messages: promotions.controller.js:108,157,168
+
+5) Lockers -> frontend/src/features/admin/pages/AdminLockers.jsx
+- Frontend:
+  - required inputs: line 91
+  - API error handling: lines 69,114,136,156
+  - error alert UI: lines 251-254
+- Backend:
+  - routes and auth: lockers.routes.js:20-23,39
+  - validation schemas: lockers.validation.js:16-21,24-34,56-58
+  - controller errors/success:
+    - duplicate/not found/conflict: lockers.controller.js:89,109,132,163,264,267,292
+    - success messages: lockers.controller.js:98,154,172,331
+
+6) FAQs -> frontend/src/features/admin/pages/AdminFaqs.jsx
+- Frontend page wrapper:
+  - delegates to shared manager: frontend/src/features/admin/pages/AdminFaqs.jsx:1-11
+- Shared FAQ manager validations/messages:
+  - frontend/src/shared/components/faq/FaqManagerPage.jsx
+  - required + min length checks: lines 87-100
+  - load/save/delete catch handling: lines 64-68,122-124,136-138
+  - API field error normalization: lines 40-49
+  - error alert UI: lines 218-220
+- Backend:
+  - routes protected for admin write: faqs.routes.js:16-18
+  - validation schemas + messages: faqs.validation.js:18-25,31-45
+  - controller ownership + not found errors: faqs.controller.js:101,104,135,138
+  - success messages: faqs.controller.js:91,125,155
+
+7) Settings -> frontend/src/features/admin/pages/AdminSettings.jsx
+- Frontend:
+  - load/save error toasts: lines 117-122,189-193
+  - password length check message: line 202
+  - backend fieldErrors merge into UI: lines 231-233
+  - helper/error text in inputs: lines 534,544-545
+- Backend:
+  - routes: admin.routes.js:30-32
+  - schema validation/messages:
+    - admin settings schema: admin.controller.js:17-20
+    - password schema and regex/match rules: admin.controller.js:25-41
+  - controller errors:
+    - invalid admin/not found: admin.controller.js:61,66,82
+    - email conflict: admin.controller.js:109
+    - current password invalid: admin.controller.js:142
+  - success messages: admin.controller.js:122,160
+
+
+DIETITIAN DASHBOARD (Sidebar)
+=============================
+
+1) Dashboard -> frontend/src/features/dietitian/pages/DietitianDashboard.jsx
+- Frontend:
+  - slot input validation messages:
+    - date/time rules: lines 186,192,195,202
+    - required fields/account checks: lines 276,281,315,321,354
+  - appointment reject reason required: line 244
+  - meal-plan style validation messages: lines 425-430,449,457
+  - API errors/specific status handling: lines 299,340,364,505-514,538
+  - error alert UI: lines 1101-1103
+- Backend:
+  - routes + ownership guard: dietitian.routes.js:23-27,38-42,45-49,52-56
+  - scheduling/profile validation rules: dietitian.validation.js:14,64,72,83,91,112
+  - controller errors/messages:
+    - validation wrapper: dietitian.controller.js:26-30
+    - slot overlap/not found/time-order errors: dietitian.controller.js:127,338,359,376,397
+    - success messages: dietitian.controller.js:221,347,386,401
+  - appointment status updates use appointments module:
+    - appointments.routes.js:48
+    - appointments.controller.js:176,184,189,221
+
+2) Clients -> frontend/src/features/dietitian/pages/DietitianClients.jsx
+- Frontend:
+  - meal macro limits and required published content checks: lines 311-316,335
+  - save/publish error handling with 409/422 branches: lines 428-448
+  - delete error handling: lines 476-480
+  - feedback alert/snackbar: lines 982-989
+- Backend:
+  - meal plan routes/ownership: mealPlans.routes.js:62-65,68-71,74-77,80-83,105-108,111-114
+  - meal plan validation rules: mealPlans.validation.js:22-23,58,109,156
+  - meal plan controller conflict/not-found/errors:
+    - submitted plan cannot edit/delete: mealPlans.controller.js:164,198,270
+    - required meal option on submit: mealPlans.controller.js:223-224
+    - success messages: mealPlans.controller.js:181,205,254,276
+
+3) Meal Plans -> frontend/src/features/dietitian/pages/DietitianMealPlans.jsx
+- Frontend:
+  - required fields message: line 186
+  - missing account message: line 177
+  - add/update/delete API error messages: lines 204-205,266-267,283-284
+  - alert UI: lines 692-699
+- Backend:
+  - meal library routes for dietitian: mealPlans.routes.js:87-90,93-96,99-102
+  - schema validation for meal fields: mealPlans.validation.js:34-43,49-58
+  - controller errors + success:
+    - parse/validation: mealPlans.controller.js:45-53
+    - not found: mealPlans.controller.js:108,128
+    - success messages: mealPlans.controller.js:94,115,132
+
+
+COACH DASHBOARD (Sidebar)
+=========================
+
+1) Dashboard -> frontend/src/features/coach/pages/CoachDashboard.jsx
+- Frontend:
+  - data load errors shown via toast: lines 181,186-187
+  - toast alert UI: lines 657,662-664
+- Backend:
+  - reads appointments/progress:
+    - appointments routes + scope: appointments.routes.js:39,20,26,29,32
+    - progress coach route + ownership: progress.routes.js:16-20
+    - progress validation/controller: progress.validation.js:25-29, progress.controller.js:191-192
+
+2) Clients -> frontend/src/features/coach/pages/CoachClients.jsx
+- Frontend:
+  - load errors: lines 170-172
+  - approve/reject API errors: lines 245-246,294-298
+  - reject reason required: line 275
+  - reject dialog required input UI: line 583 and error block 592-594
+- Backend:
+  - appointments status route: appointments.routes.js:48
+  - status validation schema: appointments.validation.js:76-78
+  - status update errors (not found/forbidden/status transition): appointments.controller.js:180,184,189
+  - success message: appointments.controller.js:221
+
+3) Scheduling -> frontend/src/features/coach/pages/CoachScheduling.jsx
+- Frontend:
+  - local validate() and required/date/time checks: lines 222,224,229,235,238,244
+  - account required messages: lines 263,311
+  - submit/delete API error fallbacks: lines 292,321
+  - error alert UI: line 524
+- Backend:
+  - route auth + ownership: coach.routes.js:40-44,47-51,54-58
+  - slot validation schema: coachScheduling.validation.js:16-32
+  - controller validation/errors:
+    - parse wrapper: coachScheduling.controller.js:20-24
+    - end-before-start/overlap/not-found: coachScheduling.controller.js:34,107,129,148,171
+    - success messages: coachScheduling.controller.js:116,160,175
+
+4) Workout Plans -> frontend/src/features/coach/pages/CoachWorkoutPlans.jsx
+- Frontend:
+  - form validation messages:
+    - plan title required: line 490
+    - duration must be 30/60: line 492
+    - exercise row required fields: lines 559-562
+    - add/update exercise required fields: lines 665,679
+  - API error toasts:
+    - load/save/delete/submit/update: lines 219,533,617,658,673,692,702
+  - feedback alert UI: lines 1345-1347
+- Backend:
+  - routes + ownership: workouts.routes.js:46-51,55,58-71,75-85
+  - schema validation:
+    - durationDays and exercise minimums: workouts.validation.js:54-55,61,69-70
+    - session and category validation: workouts.validation.js:91-104,118-134
+  - controller errors/messages:
+    - submitted plan cannot edit/delete: workouts.controller.js:167,196
+    - week publish constraints: workouts.controller.js:235,239,244
+    - session constraints: workouts.controller.js:330,333,336,387,449,489
+    - success messages: workouts.controller.js:153,184,204,315,363,422,526
+
+
+Notes
+-----
+- Some sidebar pages are read-only dashboards; they have API load catch/fallback handling but no form validation.
+- Ownership and role checks are enforced primarily in backend routes via authenticateJWT, authorizeRoles, and requireOwnership.
+- Validation failures are generally returned as 'Validation failed' with field details from safeParse/parse wrappers.

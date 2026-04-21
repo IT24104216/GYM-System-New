@@ -1,0 +1,60 @@
+
+> gympro-backend@1.0.0 test:api
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv4.1.0 [39m[90mC:/Users/madhu/gympro-client/backend[39m
+
+ [32m✓[39m tests/integration/mealplans.test.js [2m([22m[2m6 tests[22m[2m)[22m[33m 26995[2mms[22m[39m
+     [33m[2m✓[22m[39m creates meal library item (201 happy path) [33m 6478[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 without token [33m 1758[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for wrong role token [33m 3278[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 422 for invalid payload [33m 3084[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 404 when library item id is missing [33m 3675[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 409 when deleting submitted diet plan [33m 6966[2mms[22m[39m
+ [32m✓[39m tests/integration/dietitian.test.js [2m([22m[2m6 tests[22m[2m)[22m[33m 22101[2mms[22m[39m
+     [33m[2m✓[22m[39m creates a dietitian slot (201 happy path) [33m 8193[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 for create slot without token [33m 2108[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for non-dietitian token on create slot [33m 2907[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 422 for invalid slot payload [33m 3073[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 404 for admin token when dietitian id does not exist [33m 2869[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 409 for overlapping slot conflict [33m 2463[2mms[22m[39m
+ [32m✓[39m tests/integration/admin.test.js [2m([22m[2m6 tests[22m[2m)[22m[33m 20750[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 200 for admin listing users (happy path) [33m 6184[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 for admin route without token [33m 1825[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for non-admin token on admin route [33m 2436[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 422 for invalid role update payload [33m 3090[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 404 when admin requests missing user id [33m 3483[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 409 when updating admin settings with existing email [33m 3213[2mms[22m[39m
+ [32m✓[39m tests/integration/coach.test.js [2m([22m[2m6 tests[22m[2m)[22m[33m 22055[2mms[22m[39m
+     [33m[2m✓[22m[39m creates a coach slot (201 happy path) [33m 6385[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 for create slot without token [33m 2635[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for non-coach token on create slot [33m 2866[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 422 for invalid slot payload [33m 2877[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 when coach tries to access another coach id [33m 4437[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 409 for overlapping slot conflict [33m 2377[2mms[22m[39m
+ [32m✓[39m tests/integration/workouts.test.js [2m([22m[2m6 tests[22m[2m)[22m[33m 22373[2mms[22m[39m
+     [33m[2m✓[22m[39m creates workout plan (201 happy path) [33m 6667[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 without token [33m 2409[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for wrong role token [33m 4375[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 422 for invalid payload [33m 2866[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 404 for missing user while creating plan [33m 3625[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 409 when submitting incomplete workout plan [33m 1912[2mms[22m[39m
+ [32m✓[39m tests/integration/auth.test.js [2m([22m[2m4 tests[22m[2m)[22m[33m 24218[2mms[22m[39m
+     [33m[2m✓[22m[39m registers a new user [33m 7769[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects duplicate registration [33m 5123[2mms[22m[39m
+     [33m[2m✓[22m[39m logs in and refreshes access token [33m 7384[2mms[22m[39m
+     [33m[2m✓[22m[39m rejects invalid login password [33m 3465[2mms[22m[39m
+ [32m✓[39m tests/integration/access-matrix.test.js [2m([22m[2m3 tests[22m[2m)[22m[33m 9643[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 401 for protected admin route without token [33m 3807[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 403 for user token on admin route [33m 2468[2mms[22m[39m
+     [33m[2m✓[22m[39m returns 200 for admin token on admin route [33m 2865[2mms[22m[39m
+ [32m✓[39m tests/integration/ownership.test.js [2m([22m[2m2 tests[22m[2m)[22m[33m 8740[2mms[22m[39m
+     [33m[2m✓[22m[39m blocks user from reading another user progress [33m 5405[2mms[22m[39m
+     [33m[2m✓[22m[39m allows user to read own progress [33m 2817[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+[2m      Tests [22m [1m[32m39 passed[39m[22m[90m (39)[39m
+[2m   Start at [22m 01:43:52
+[2m   Duration [22m 193.96s[2m (transform 1.53s, setup 31.46s, import 1.70s, tests 156.87s, environment 2ms)[22m
+
